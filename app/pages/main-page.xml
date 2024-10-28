@@ -1,0 +1,29 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <ActionBar class="action-bar">
+        <GridLayout columns="*, auto">
+            <Label col="0" text="Chat App" class="action-bar-title"/>
+            <Button col="1" text="Logout" tap="{{ logout }}" class="btn-logout"/>
+        </GridLayout>
+    </ActionBar>
+
+    <GridLayout rows="*, auto" columns="*" class="page-content">
+        <ListView row="0" items="{{ messages }}" separatorColor="#EEEEEE" class="list-group">
+            <ListView.itemTemplate>
+                <GridLayout columns="*" class="list-group-item">
+                    <StackLayout>
+                        <GridLayout columns="auto, *, auto">
+                            <Label col="0" text="{{ sender }}" class="text-primary font-weight-bold"/>
+                            <Label col="2" text="{{ timestamp, 'HH:mm' }}" class="text-muted"/>
+                        </GridLayout>
+                        <Label text="{{ text }}" textWrap="true" class="message-text"/>
+                    </StackLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <GridLayout row="1" columns="*, auto" class="input-field">
+            <TextField col="0" text="{{ currentMessage }}" hint="Type a message..." class="input"/>
+            <Button col="1" text="Send" tap="{{ sendMessage }}" class="btn btn-primary"/>
+        </GridLayout>
+    </GridLayout>
+</Page>

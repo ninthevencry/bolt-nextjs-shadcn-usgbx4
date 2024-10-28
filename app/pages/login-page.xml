@@ -1,0 +1,12 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <ActionBar title="Login" class="action-bar">
+    </ActionBar>
+
+    <StackLayout class="form">
+        <Label text="Welcome to Chat App" class="header"/>
+        <TextField text="{{ username }}" hint="Username" class="input"/>
+        <TextField text="{{ password }}" hint="Password" secure="true" class="input"/>
+        <Button text="Login" tap="{{ login }}" class="btn btn-primary"/>
+        <Label text="{{ errorMessage }}" class="error" visibility="{{ errorMessage ? 'visible' : 'collapsed' }}"/>
+    </StackLayout>
+</Page>
